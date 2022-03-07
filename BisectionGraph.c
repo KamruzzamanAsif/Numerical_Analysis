@@ -24,7 +24,7 @@ int main(void){
         c = (a+b)/2;
 
         double value = function(c);
-        printf("\n%d,%lf",itr,fabs(value));
+        printf("\n%d,%lf",itr,c);
         if( fabs(value) <= ep ){
             break;
         }
