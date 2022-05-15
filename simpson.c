@@ -1,23 +1,25 @@
 #include <stdio.h>
 
+#define f(x) ((x*x)+1)
+#define n 200
+
 int main(void){
-    double x[] = {0.0, 0.2, 0.4, 0.6, 0.8};
-    double fx[] = {0.0, 0.1, 0.3, 0.6, 1.0};
+    double a = 0, b = 1, h, area;
 
-    double sum_odd = 0.0, sum_even = 0.0;
+    h = (b-a)/n;
 
-    double h = 0.2, area;
+    area = f(a) + f(b);
     
-    for(int i=1; i<(sizeof(x)/sizeof(x[0]))-1; i++){
-        if(i%2){
-            sum_odd += fx[i];
+    for(int i=1; i<n; i++){
+        a += h;
+
+        if(i%2 == 0){
+            area += (2*f(a)); 
         }
         else{
-            sum_even += fx[i];
+            area += (4*f(a)); 
         }
     }
-
-    area = fx[0] + fx[(sizeof(x)/sizeof(x[0]))-1] + (4*sum_odd) + (2*sum_even);
 
     area = (area*h)/3;
 
