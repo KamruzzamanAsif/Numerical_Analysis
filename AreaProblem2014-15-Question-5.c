@@ -38,7 +38,7 @@ double simpson(double a, double b, int n){
     int i=0;
     double x = a;
     while(x<=b){
-        fx[i++] = h(x);
+        fx[i++] = fabs(h(x));
         x += h;
     }
     
