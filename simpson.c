@@ -5,6 +5,7 @@
 
 int main(void){
     double a = 0, b = 1, h, area;
+    double odd_sum = 0.0, even_sum = 0.0;
 
     h = (b-a)/n;
 
@@ -14,14 +15,15 @@ int main(void){
         a += h;
 
         if(i%2 == 0){
-            area += (2*f(a)); 
+            even_sum += f(a);
         }
         else{
-            area += (4*f(a)); 
+            odd_sum += f(a);
         }
     }
 
-    area = (area*h)/3;
+    area += (4*odd_sum + 2*even_sum);
+    area = area * (h/3);    
 
     printf("Area is: %.3lf\n", area);
 
